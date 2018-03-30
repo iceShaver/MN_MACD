@@ -113,8 +113,7 @@ namespace mn_macd {
 
         std::transform(ema12->begin(), ema12->end(), ema26->begin(), std::back_inserter(*macd),
                        std::minus<>()); //MACD = EMA12 - EMA26
-        auto signal_thread = std::async(std::launch::async, mn_macd::ema, *macd, 9);
-        auto signal = signal_thread.get();
+        auto signal = mn_macd::ema(*macd, 9);
 
         // Trim data at beginning
         auto trim_data = [](auto x, size_t offset) { x->erase(x->begin(), x->begin() + offset); };
