@@ -12,5 +12,5 @@ If args not specified, default values are applied:
 * [macd_data] = macd.txt
 * [signal_data] = signal.txt
 * [rate_data] = rate.txt
-##Compilation
+## Compilation
 Use build.sh
